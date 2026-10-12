@@ -1,6 +1,7 @@
 #This script is used for RedHat  linux , Amozon Linux etc
-#STEP-1: Installing Git 
-yum install git -y
+#STEP-1: Installing Git and Maven
+yum install git maven -y 
+
 
 #STEP-2: Repo Information (jenkins.io --> download -- > redhat)
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
@@ -13,4 +14,7 @@ sudo mount -o remount,size=2G /tmp
 #STEP-4: Start and check the JENKINS Status
 systemctl start jenkins.service
 systemctl status jenkins.service
+
+#STEP-5: Auto-Start Jenkins
+chkconfig jenkins on
 
